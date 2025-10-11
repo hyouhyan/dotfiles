@@ -18,24 +18,19 @@ end
 ----------------------------------------------------
 
 -- Launch Menu
-local launch_menu = require("config/launch_menu")
-merge_config(config, launch_menu)
+merge_config(config, require("config/launch_menu"))
 
 -- Keybind
-local keybind = require("config/keybind")
-merge_config(config, keybind)
+merge_config(config, require("config/keybind"))
 
 -- style
-local style = require("config/style")
-merge_config(config, style)
+merge_config(config, require("config/style"))
 
 -- transparent
-local transparent = require("config/transparent")
-merge_config(config, transparent)
+merge_config(config, require("config/transparent"))
 
 -- os
-local os = require("config/os/os")
-merge_config(config, os)
+merge_config(config, require("config/os/os"))
 
 ----------------------------------------------------
 -- 雑多なコンフィグたち
