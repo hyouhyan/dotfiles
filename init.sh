@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # env
-SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )/bin"
+source "${HOME}/dotfiles/.envrc"
 
 # initialize something
 ${SCRIPTPATH}/wezterm.sh

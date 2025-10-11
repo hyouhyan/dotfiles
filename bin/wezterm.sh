@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# env
+source "${HOME}/dotfiles/.envrc"
+
 mkdir -p ~/.config
 
-ln -s ${SCRIPTPATH}/wezterm ~/.config/wezterm
+ln -sv ${DOTFILESPATH}/wezterm ~/.config/wezterm
