@@ -33,12 +33,15 @@ merge_config(config, style)
 local transparent = require("config/transparent")
 merge_config(config, transparent)
 
+-- os
+local os = require("config/os/os")
+merge_config(config, os)
+
 ----------------------------------------------------
 -- 雑多なコンフィグたち
 ----------------------------------------------------
 
--- デフォルトをWSLにする
-config.default_prog = { 'wsl.exe', '--cd', '~' }
+
 
 
 return config
