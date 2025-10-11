@@ -1,4 +1,4 @@
-hs.hotkey.bind({ "option", "shift" }, "t", function()
+hs.hotkey.bind({ "option", "control" }, "t", function()
   local appName = "WezTerm"
   local app = hs.application.get(appName)
 
