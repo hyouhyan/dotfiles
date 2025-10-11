@@ -6,6 +6,20 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+function merge_config(config, new_config)
+	for k, v in pairs(new_config) do
+		config[k] = v
+	end
+end
+
+-- Launch Menu
+local launch_menu = require("launch_menu")
+merge_config(config, launch_menu)
+
+-- Keybind
+local keybind = require("keybind")
+merge_config(config, keybind)
+
 -- カラースキームの設定
 color_scheme = "iceberg-dark"
 
@@ -20,25 +34,6 @@ config.font_size = 14
 
 
 config.default_prog = { 'wsl.exe', '--cd', '~' }
-
-----------------------------------------------------
--- launch_menu
-----------------------------------------------------
-config.launch_menu = {
-  {
-    label = 'PowerShell',
-    args = { 'powershell.exe' },
-  },
-  {
-    label = 'WSL2',
-    args = { 'wsl.exe', '--cd', '~' },
-  },
-  {
-    label = 'Command Prompt',
-    args = { 'cmd.exe' },
-  },
-}
-
 
 
 -- 透明化切り替えのやつ
@@ -64,74 +59,6 @@ wezterm.on('toggle-opacity', function(window, pane)
     window_background_opacity = new_opacity,
   })
 end)
-
--- ショートカットキー設定
-local act = wezterm.action
-config.keys = {
-  -- Alt(Opt)+Shift+Fでフルスクリーン切り替え
-  {
-    key = 'f',
-    mods = 'SHIFT|META',
-    action = wezterm.action.ToggleFullScreen,
-  },
-  -- ショートカットキーを Ctrl + Shift + U で透明化切り替え
-  {
-    key = 'U',
-    mods = 'SHIFT|ALT',
-    action = act.EmitEvent('toggle-opacity'),
-  },
-  -- Ctrl+Shift+tで新しいタブを作成
-  {
-    key = 't',
-    mods = 'SHIFT|CTRL',
-    action = act.SpawnTab 'CurrentPaneDomain',
-  },
-  -- Ctrl+Alt+tでLauncher
-  {
-    key = 't',
-    mods = 'CTRL|ALT',
-    action = wezterm.action.ShowLauncher,
-  },
-  -- 横画面分割
-  {
-    key = 'd',
-    mods = 'SHIFT|CTRL',
-    action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
-  },
-  -- 縦画面分割
-  {
-    key = 'd',
-    mods = 'SHIFT|CTRL|ALT',
-    action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
-  },
-  -- Ctrl+左矢印でカーソルを前の単語に移動
-  {
-    key = "LeftArrow",
-    mods = "CTRL",
-    action = act.SendKey {
-      key = "b",
-      mods = "META",
-    },
-  },
-  -- Ctrl+右矢印でカーソルを次の単語に移動
-  {
-    key = "RightArrow",
-    mods = "CTRL",
-    action = act.SendKey {
-      key = "f",
-      mods = "META",
-    },
-  },
-  -- Ctrl+Backspaceで前の単語を削除
-  {
-    key = "Backspace",
-    mods = "CTRL",
-    action = act.SendKey {
-      key = "w",
-      mods = "CTRL",
-    },
-  },
-}
 
 -- ウィンドウのタブバーを非表示
 config.window_decorations = "RESIZE"
