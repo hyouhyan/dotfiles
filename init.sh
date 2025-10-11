@@ -3,5 +3,8 @@
 # env
 source "${HOME}/dotfiles/.envrc"
 
-# initialize something
+# initialize wezterm
 ${SCRIPTPATH}/wezterm/init.sh
+
+# initialize hammerspoon
+${SCRIPTPATH}/hammerspoon/init.sh

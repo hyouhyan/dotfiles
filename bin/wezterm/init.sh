@@ -5,4 +5,4 @@ source "${HOME}/dotfiles/.envrc"
 
 mkdir -p ~/.config
 
-ln -sv ${DOTFILESPATH}/wezterm ~/.config/wezterm
+ln -sfv ${DOTFILESPATH}/wezterm ~/.config/wezterm
