@@ -12,12 +12,16 @@ function merge_config(config, new_config)
 	end
 end
 
+----------------------------------------------------
+-- 分割したコンフィグファイル読み込み
+----------------------------------------------------
+
 -- Launch Menu
-local launch_menu = require("launch_menu")
+local launch_menu = require("config/launch_menu")
 merge_config(config, launch_menu)
 
 -- Keybind
-local keybind = require("keybind")
+local keybind = require("config/keybind")
 merge_config(config, keybind)
 
 -- カラースキームの設定
