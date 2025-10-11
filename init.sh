@@ -4,4 +4,4 @@
 source "${HOME}/dotfiles/.envrc"
 
 # initialize something
-${SCRIPTPATH}/wezterm.sh
+${SCRIPTPATH}/wezterm/init.sh
