@@ -17,9 +17,6 @@ end
 -- 分割したコンフィグファイル読み込み
 ----------------------------------------------------
 
--- Launch Menu
-merge_config(config, require("config/launch_menu"))
-
 -- Keybind
 merge_config(config, require("config/keybind"))
 
@@ -31,12 +28,6 @@ merge_config(config, require("config/transparent"))
 
 -- os
 merge_config(config, require("config/os/os"))
-
-----------------------------------------------------
--- 雑多なコンフィグたち
-----------------------------------------------------
-
-
 
 
 return config
