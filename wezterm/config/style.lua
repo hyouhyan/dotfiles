@@ -10,7 +10,10 @@ color_scheme = "iceberg-dark"
 config.window_background_opacity = 0.85
 
 -- フォントの設定
-config.font = wezterm.font("Cica", {weight="Regular", stretch="Normal", style="Normal"})
+config.font = wezterm.font_with_fallback {
+  'Cica',
+  'Ubuntu Mono',
+}
 
 -- フォントサイズの設定
 config.font_size = 14
