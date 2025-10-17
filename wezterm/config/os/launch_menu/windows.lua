@@ -11,10 +11,6 @@ config.launch_menu = {
     label = 'WSL2',
     args = { 'wsl.exe', '--cd', '~' },
   },
-  {
-    label = 'Command Prompt',
-    args = { 'cmd.exe' },
-  },
 }
 
 return config
