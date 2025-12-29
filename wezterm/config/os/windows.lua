@@ -9,8 +9,8 @@ function merge_config(config, new_config)
 	end
 end
 
--- デフォルトをWSLにする
--- config.default_prog = { 'wsl.exe', '--cd', '~' }
+-- デフォルトをWSLのByobuにする
+config.default_prog = { 'wsl.exe', '--cd', '~', "-e", "byobu" }
 
 -- Launch Menu
 merge_config(config, require("config/os/launch_menu/windows"))
