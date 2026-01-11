@@ -8,7 +8,7 @@
         ; 既にアクティブなら閉じる
         if WinActive("^Cosense ahk_class Chrome_WidgetWin_1")
         {
-            WinClose
+            WinMinimize
         }
         else
         {
