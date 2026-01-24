@@ -13,11 +13,15 @@
         else
         {
             WinActivate
+            WinSet, AlwaysOnTop, On
         }
     }
     else
     {
         Run, "C:\Users\Hyouhyan\AppData\Local\Vivaldi\Application\vivaldi_proxy.exe"  --profile-directory=Default --app-id=ngboffpgmgciiinnflnkgedmbalfkeeg
+        WinWait, ^Cosense ahk_class Chrome_WidgetWin_1
+        WinActivate
+        WinSet, AlwaysOnTop, On
     }
     return
 
