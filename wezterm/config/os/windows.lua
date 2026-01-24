@@ -9,8 +9,8 @@ function merge_config(config, new_config)
 	end
 end
 
--- デフォルトをWSLのByobuにする
-config.default_prog = { 'wsl.exe', '--cd', '~', "-e", "byobu" }
+-- デフォルトをWSLにする
+config.default_prog = { 'wsl.exe', '--cd', '~'}
 
 -- 最初からフルスクリーンで起動
 local mux = wezterm.mux
