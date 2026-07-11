@@ -1,27 +1,27 @@
 ﻿SetTitleMatchMode, RegEx
 
-; Scrapbox用
+; Obsidian用
 ^#!o::
-    ; Cosense PWA のウィンドウが存在するか
-    if WinExist("^Cosense ahk_class Chrome_WidgetWin_1")
+    ApplicationBinaryName=Obsidian.exe
+    ApplicationBinaryPath=""C:\Program Files\Obsidian\Obsidian.exe""
+
+    Process, Exist, %ApplicationBinaryName%
+    if ErrorLevel=0
     {
-        ; 既にアクティブなら閉じる
-        if WinActive("^Cosense ahk_class Chrome_WidgetWin_1")
-        {
-            WinMinimize
-        }
-        else
-        {
-            WinActivate
-            WinSet, AlwaysOnTop, On
-        }
+        Run, %ApplicationBinaryPath%, %A_WorkingDir%
+        WinWait, ahk_exe %ApplicationBinaryName%
+        WinActivate, ahk_exe %ApplicationBinaryName%
+        Exit
+    }
+
+    WinGet, WinState, MinMax, ahk_exe %ApplicationBinaryName%
+    if WinState=-1
+    {
+        WinActivate, ahk_exe %ApplicationBinaryName%
     }
     else
     {
-        Run, "C:\Users\Hyouhyan\AppData\Local\Vivaldi\Application\vivaldi_proxy.exe"  --profile-directory=Default --app-id=ngboffpgmgciiinnflnkgedmbalfkeeg
-        WinWait, ^Cosense ahk_class Chrome_WidgetWin_1
-        WinActivate
-        WinSet, AlwaysOnTop, On
+        WinMinimize, ahk_exe %ApplicationBinaryName%
     }
     return
 
