@@ -10,7 +10,7 @@ function merge_config(config, new_config)
 end
 
 -- デフォルトをWSLにする
-config.default_prog = { 'wsl.exe', '--cd', '~'}
+config.default_prog = { 'wsl.exe', '--cd', '~', '-d', 'Ubuntu' }
 
 -- 最初からフルスクリーンで起動
 local mux = wezterm.mux
