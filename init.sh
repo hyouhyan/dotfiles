@@ -8,3 +8,6 @@ ${SCRIPTPATH}/wezterm/init.sh
 
 # initialize hammerspoon
 ${SCRIPTPATH}/hammerspoon/init.sh
+
+# initialize claude code
+${SCRIPTPATH}/claude/init.sh
